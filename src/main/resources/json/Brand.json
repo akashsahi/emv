@@ -1,0 +1,57 @@
+{
+	"type": "object",
+	"properties": {
+		"version": {
+			"type": "integer"
+		},
+		"createdBy": {
+			"type": "integer"
+		},
+		"updatedBy": {
+			"type": "integer"
+		},
+		"createdDate": {
+			"type": "number"
+		},
+		"updatedDate": {
+			"type": "number"
+		},
+		"brandId": {
+			"type": "number"
+		},
+		"brandName": {
+			"type": "string"
+		},
+		"brandDescription": {
+			"type": "string"
+		},
+		"status": {
+			"type": "string",
+			"enum": [
+				"ACTIVE",
+				"INACTIVE",
+				"DELETED"
+			]
+		},
+		"categoryId": {
+			"type": "object",
+			"properties": {
+				"version": {
+					"type": "integer"
+				},
+				"createdBy": {
+					"type": "integer"
+				},
+				"updatedBy": {
+					"type": "integer"
+				},
+				"createdDate": {
+					"type": "number"
+				},
+				"updatedDate": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}

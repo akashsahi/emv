@@ -1,0 +1,63 @@
+{
+	"type": "object",
+	"properties": {
+		"version": {
+			"type": "integer"
+		},
+		"createdBy": {
+			"type": "integer"
+		},
+		"updatedBy": {
+			"type": "integer"
+		},
+		"createdDate": {
+			"type": "number"
+		},
+		"updatedDate": {
+			"type": "number"
+		},
+		"documentId": {
+			"type": "number"
+		},
+		"documentName": {
+			"type": "string"
+		},
+		"documentDescription": {
+			"type": "string"
+		},
+		"startDate": {
+			"type": "number"
+		},
+		"endDate": {
+			"type": "number"
+		},
+		"status": {
+			"type": "string",
+			"enum": [
+				"ACTIVE",
+				"INACTIVE",
+				"DELETED"
+			]
+		},
+		"categoryId": {
+			"type": "object",
+			"properties": {
+				"version": {
+					"type": "integer"
+				},
+				"createdBy": {
+					"type": "integer"
+				},
+				"updatedBy": {
+					"type": "integer"
+				},
+				"createdDate": {
+					"type": "number"
+				},
+				"updatedDate": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}

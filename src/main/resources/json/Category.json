@@ -1,0 +1,20 @@
+{
+	"type": "object",
+	"properties": {
+		"version": {
+			"type": "integer"
+		},
+		"createdBy": {
+			"type": "integer"
+		},
+		"updatedBy": {
+			"type": "integer"
+		},
+		"createdDate": {
+			"type": "number"
+		},
+		"updatedDate": {
+			"type": "number"
+		}
+	}
+}

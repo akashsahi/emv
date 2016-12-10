@@ -1,0 +1,8 @@
+ {
+	"brandName": "Test",
+	"brandDescription": "Test Description",
+	"status": "ACTIVE",
+	"categoryId": {
+		"categoryId": 1
+	}
+}

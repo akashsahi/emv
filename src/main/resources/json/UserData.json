@@ -1,0 +1,10 @@
+{
+	"firstName": "Akash",
+	"lastName": "Sahi",
+	"userName": "Akash.Sahi",
+	"email": "Akash.Sahi@gmail.com",
+	"status": "ACTIVE",
+	"brandId": {
+		"brandId": 2
+	}
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="DEBUG" name="EMV">
+	<appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{dd MMM HH:mm:ss:SSS} [%t] %p %c.%m - %m%n" />
+		</Console>
+		<!-- <RollingFile name="FC_LOG" fileName="logs/fc.log" filePattern="logs/fc%i.log"> 
+			<PatternLayout pattern="%d{dd MMM HH:mm:ss:SSS} [%t] %p %c.%m - %m%n"/> <Policies> 
+			<SizeBasedTriggeringPolicy size="50 MB"/> </Policies> <DefaultRolloverStrategy 
+			max="20"/> </RollingFile> -->
+		<RollingFile name="API_LOG" fileName="logs/api.log"
+			filePattern="logs/api%i.log">
+			<PatternLayout pattern="%d{dd MMM HH:mm:ss:SSS} [%t] %p %c{2}.%M - %m%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+	</appenders>
+	<loggers>
+		<!-- <logger name="com.fc" level="DEBUG" additivity="false"> <appender-ref 
+			ref="FC_LOG"/> </logger> -->
+		<logger name="net.sf" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.springframework" level="DEBUG" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.springframework.security" level="INFO"
+			additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.springframework.stereotype" level="DEBUG"
+			additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.reflections" level="ERROR" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.jasypt" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.jboss" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.hibernate" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.apache.cxf" level="DEBUG" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="org.apache" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="io.swagger" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<logger name="com.zaxxer.hikari" level="INFO" additivity="false">
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<root level="DEBUG">
+			<appender-ref ref="STDOUT" />
+			<appender-ref ref="API_LOG" />
+			<appender-ref ref="FC_LOG" />
+		</root>
+
+	</loggers>
+</configuration>

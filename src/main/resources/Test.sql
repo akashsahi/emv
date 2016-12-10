@@ -1,0 +1,7 @@
+SELECT c.customer_name,i.integration_id, i.integration_code, ip.integration_product_id, ip.integration_product_code,ip.vendor_name,ips.integration_product_setting_id,ips.integration_product_setting_code,ips.integration_product_setting_value
+FROM integration i, integration_product ip , integration_product_setting ips  , customer_integration_product cip, customer c
+where ips.integration_product_id =ip.integration_product_id AND  i.integration_id=ip.integration_id AND cip.customer_id =c.customer_id AND ip.integration_product_id=cip.integration_product_id AND c.customer_name ='Caliber'  
+UNION 
+SELECT c.customer_name, i.integration_id, i.integration_code, ip.integration_product_id, ip.integration_product_code ,ip.vendor_name,ips.customer_integration_product_setting_id,ips.customer_integration_product_setting_code,ips.integration_product_setting_value 
+FROM integration i, integration_product ip , customer_integration_product_setting ips , customer_integration_product cip, customer c
+where ips.integration_product_id =ip.integration_product_id AND  i.integration_id=ip.integration_id AND cip.customer_id =c.customer_id AND ip.integration_product_id=cip.integration_product_id AND c.customer_name ='Caliber'  

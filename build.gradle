@@ -1,0 +1,58 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Akash Tutorial Example',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+ext {
+	springBootVersion ='1.4.2.RELEASE'
+	springDataVersion = '1.9.4.RELEASE'
+	hibernateVersion ='5.2.5.Final'
+	hibernateValidationVersion='5.3.3.Final'
+	postgresqlVersion='9.4.1212.jre7'
+	hikariVersion='2.4.4'
+	testngVersion='6.9.13.6'
+	}
+
+dependencies {
+    compile 'org.springframework:spring-webmvc:4.3.4.RELEASE'
+    compile 'org.springframework:spring-web:4.3.4.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.3.4.RELEASE'
+    compile 'org.springframework:spring-orm:4.3.4.RELEASE'
+    compile 'org.springframework.security:spring-security-core:4.2.0.RELEASE'
+    compile 'org.springframework.security:spring-security-config:4.2.0.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:1.10.5.RELEASE'
+    
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
+    compile 'com.fasterxml.jackson.module:jackson-module-jsonSchema:2.8.5'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+	compile 'javax.servlet:jstl:1.2'
+	
+    
+    compile 'org.eclipse.persistence:javax.persistence:2.1.1'
+	compile "org.hibernate:hibernate-core:$hibernateVersion"
+	compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+	compile "org.hibernate:hibernate-validator:$hibernateValidationVersion"
+	compile 'org.apache.logging.log4j:log4j-api:2.7'
+    compile 'org.apache.logging.log4j:log4j-core:2.7'
+	compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.7'
+	compile 'org.postgresql:postgresql:9.4.1212.jre7'
+	compile 'com.zaxxer:HikariCP:2.4.4'
+    
+    
+    
+    testCompile 'com.h2database:h2:1.4.191'
+	testCompile "org.testng:testng:5.7" 
+} 
+
